@@ -1028,6 +1028,7 @@ typedef struct ecm_request_t
 	uint8_t			cw[16];
 	EXTENDED_CW		cw_ex;
 	uint8_t			ecmd5[CS_ECMSTORESIZE];
+	int8_t          demux_index;
 	int16_t			ecmlen;
 	uint16_t		caid;
 	uint16_t		ocaid;							// original caid, used for betatunneling
@@ -1545,6 +1546,7 @@ struct s_reader										// contains device info, reader info and card info
 	LLIST			*ll_entitlements;				// entitlements
 	int8_t			enable;
 	int8_t			active;
+	int8_t          for_demux;                      // set demux number for which use this reader
 	int8_t			dropbadcws;						// Schlocke: 1=drops cw if checksum is wrong. 0=fix checksum (default)
 	int8_t			disablecrccws;					// 1=disable cw checksum test. 0=enable checksum check
 	uint64_t		grp;
